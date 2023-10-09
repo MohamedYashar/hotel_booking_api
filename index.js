@@ -1,11 +1,16 @@
 const express = require ( "express")
 const BODY_PARSER = require("body-parser");
 const App_server = require ("./App/App_server")
+const  configDotenv  = require("dotenv");
+
+//  load .env variables into process.env
+configDotenv.config()
 
 const HTTP_SERVER = express();
 const PORT = 8000;
 
-const {init} = require ("./dbconfig")
+const {init} = require ("./dbconfig");
+
 init();
 
 // commanding the server  to aware of incoming req type
